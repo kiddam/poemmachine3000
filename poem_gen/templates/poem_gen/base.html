@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>	
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'poem_gen/style.css' %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'poem_gen/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'poem_gen/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'poem_gen/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static 'poem_gen/site.webmanifest' %}">
+
+	<title>poemmachine</title>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<p>poemmachine</p>
+			<a href="{% url 'register' %}">
+				<h4 class="user-opt is-available">register</h4>
+			</a>
+			<a href="{% url 'login' %}">
+				<h4 class="user-opt is-available">login</h4>
+			</a>
+			<a href="{% url 'logout' %}">
+				<h4 class="user-opt is-available">logout</h4>
+			</a>
+		</div>
+
+		<div class="main">
+			{% block content %}
+			{% endblock %}
+		</div>
+		
+		<div class="footer">
+			<a href={% url 'index' %}><p>home</p></a>
+			<p>&copy; copyright kidd 2020</p>
+		</div>
+
+	</div>
+</body>
+</html>

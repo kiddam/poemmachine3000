@@ -1,0 +1,14 @@
+{% extends 'poem_gen/base.html' %}
+
+{% block content %}
+        <div id="write-line">
+		<h3 style="color: #adacb3; margin: .25em 0">spit a verse:</h3>
+
+		<form action="{% url 'write-line' %}" method="POST">  
+               		{% csrf_token %}
+			{{ form.as_table }}
+                	<input id="pub-btn" type="submit" value="publish">
+		</form>
+		<h4>author: {{ user }}</h4>
+        </div>
+{% endblock %}

@@ -1,0 +1,288 @@
+/* generic options */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+    background-color: #624d34;
+}
+
+/* sets header layout for whole application */
+.header {
+   /* background-color: yellow; */
+    grid-area: header;
+    display: block;
+    border-bottom: solid .05em #ba9752; 
+    font-size: 3em;
+    text-align: center;
+    color: #adacb3;
+    letter-spacing: .25em;
+    padding-top: .25em;
+}
+
+.header .user-opt {
+    display: inline-block;
+    font-size: .5em;
+    color: #ba9752;
+    margin: .125em .275em .05em;
+    letter-spacing: .125em;
+}
+
+.header .user-opt:hover {
+    color: #9080bc;
+    text-decoration: overline;
+}
+
+/* sets up main content frame for whole site*/
+.main {
+    grid-area: main;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+/* main content frame for index page */
+.main > #menu {
+    display: block;
+    margin: 0;
+    position: relative;
+    top: 10%;
+}
+
+#menu > #greeting, #menu-prompt {
+    color: #9080bc;
+    margin: .275em;
+    font-size: 1.5em;
+}
+
+#menu > #user {
+    color: #adacb3;
+    margin: .275em;
+    font-size: 1.75em;
+    letter-spacing: .125em;
+}
+
+#menu > #menu-items {
+    margin-top: 2em;
+}
+
+#menu > #menu-items ul {
+    padding-left: 0;
+}
+
+#menu > #menu-items li {
+    list-style: none;
+}
+
+#menu > #menu-items .menu-item {
+    height: 2.75em;
+    width: 12em;
+    font-size: 1.5em;
+    margin: .5em;
+    border: .075em solid #9080bc;
+    border-radius: .25em;
+    padding: .275em .5em;
+    background-color: transparent;
+    color: #adacb3;
+}
+
+#menu > #menu-items .menu-item:hover, #write-line #pub-btn:hover, #get-poem > #poem-form #gen-btn:hover {
+    background-color: #ba9752;
+    color: #624d34;
+}
+
+/* main content frame for generate poem */
+.main > #get-poem {
+    display: block;
+    position: relative;
+    top: 5%;
+    text-align: center;
+}
+
+#get-poem > #poem-form {
+    display: block;
+    color: #9080bc;
+}
+
+#get-poem > #poem-form label {
+    display: block;
+    position: relative;
+    font-size: 1.25em;
+    text-transform:lowercase;
+    margin: 0 0 1.5em;
+}
+
+#get-poem > #poem-form .errorlist {
+    display: none;
+}
+
+#get-poem > #poem-form input {
+    display: block;
+    background-color: transparent;
+    color: #abacb3;
+    font-size: 1.5em;
+    height: 2em;
+    width: 3em;
+    border: solid .075em #9080bc;
+    border-radius: .25em;
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: .5em;
+}
+
+#get-poem > #poem-form #gen-btn {
+    display: block;
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 1.25em;
+    margin-top: 1.5em;
+    background-color: transparent;
+    color: #adacb3;
+    border: .075em solid #9080bc;
+    border-radius: .25em;
+    height: 2.5em;
+    width: 10em;
+    align-self: center; 
+}
+
+#get-poem > #poem-deposit {
+    display: block;
+    position: relative;
+    margin: .25em 0;
+    color: #ba9752;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    font-weight: bold;
+}
+
+/* main content frame for notebook view */
+.main > #notebook {
+    display: block;
+    position: relative;
+    top: 2.5%;
+    height: 92.5%;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.main > #notebook h3 {
+    color: #ba9752;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* displays if notebook contains no entries */
+#notebook > .nb-empty {
+    color: #adacb3;
+}
+
+/* displays if notebook contains at least one entry */
+#notebook > .nb-item {
+    border-bottom: .075em solid #ba9752;
+    margin: .125em 0;
+}
+
+#notebook > .nb-item p {
+    display: inline-flex;
+    margin: .025em .125em;
+    font-size: 1.25em;
+}
+
+#notebook > .nb-item .item-id, .generic {
+    color: #adacb3;
+}
+
+#notebook > .nb-item .content {
+    color: #9080bc;
+}
+
+#notebook > .nb-item .author {
+    color: #ba9752;
+    font-size: 1em;
+}
+
+/* main content frame for write-line */
+.main > #write-line {
+    position: relative;
+    top: 25%;
+    color: #ba9752;
+    font-size: 1.75em;
+    text-transform: lowercase;
+}
+
+#write-line label {
+    display: none;
+}
+
+#write-line #id_content {
+    background-color: transparent;
+    color: #9080bc;
+    font-size: .75em;
+    border: .075em solid #9080bc;
+    border-radius: .25em;    
+    height: 3.5em;
+    width: 30em;
+    padding: .25em;
+}
+
+#write-line #pub-btn {
+    display: block;
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: .625em;
+    margin-top: 3em;
+    background-color: transparent;
+    color: #adacb3;
+    border: .075em solid #9080bc;
+    border-radius: .25em;
+    height: 2.5em;
+    width: 10em;
+    align-self: center;
+}
+
+/* sets footer layout for entire application */
+.footer {
+    /* background-color: lightblue; */
+    grid-area: footer;
+    display: block;
+    border-top: solid .05em #ba9752;
+    text-align: center;
+    color: #9080bc;
+    padding-top: .5em;
+}
+
+.footer a {
+    color: #ba9752;
+    font-weight: bolder;
+    font-size: 1.25em;
+    letter-spacing: .125em;
+}
+
+.footer a:hover {
+    color: #9080bc;
+    text-decoration: overline;
+}
+
+/* sets grid paramaters for entire application */
+.container {
+    height: 100vh;
+    display: grid;
+    grid-gap: .25em;
+    grid-template-columns: auto;
+    grid-template-rows: [a] 8.5em [b] 1fr [c] 4.25em [d];
+    grid-template-areas:
+        "header header header"
+	". main ."
+	"footer footer footer";
+}

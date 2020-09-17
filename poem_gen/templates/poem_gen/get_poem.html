@@ -1,0 +1,22 @@
+{% extends 'poem_gen/base.html' %}
+
+{% block content %}
+        <div id="get-poem">
+		<div id="poem-form">
+			<form action="{% url 'get-poem' %}" method="GET">
+				{% csrf_token %}
+				{{ form.as_p }}
+			<input id="gen-btn" type='submit' value='generate poem'>
+			</form>
+		</div>
+
+		{% if poem %}
+		<div id="poem-deposit">
+			{% for line in poem %}
+			<p>{{ line }}</p>
+			{% endfor %}
+			<a href="{% url 'get-poem' %}"><h4 style="display: none">generate new poem</h4></a>
+		</div>
+		{% endif %}
+        </div>
+{% endblock %}

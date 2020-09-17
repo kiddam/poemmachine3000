@@ -1,0 +1,10 @@
+{% extends 'poem_gen/base.html' %}
+
+{% block content %}
+	<h2>login</h2>
+	<form action="{% url 'login' %}" method="POST">
+		{% csrf_token %}
+		{{ form }}
+		<input type=submit value=login />
+	</form>
+{% endblock %}

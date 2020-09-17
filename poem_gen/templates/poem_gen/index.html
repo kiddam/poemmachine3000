@@ -1,0 +1,21 @@
+{% extends 'poem_gen/base.html' %}
+
+{% block content %}
+	<div id="menu">
+		<h3 id="greeting">i see you lookin', </h3><h3 id="user">{{ user }}</h3>
+		<h3 id="menu-prompt"> {{ prompt }} </h3>
+		<div id="menu-items">
+		    <ul>
+			<li><a href="{% url 'get-poem' %}">
+				<button class="menu-item">{{ items.0 }}</button>
+			</a></li>
+			<li><a href="{% url 'write-line' %}">
+				<button class="menu-item">{{ items.1 }}</button>
+			</a></li>
+			<li><a href="{% url 'view-nb' %}">
+				<button class="menu-item">{{ items.2 }}</button>
+			</a></li>
+		    </ul>
+		</div>
+	</div>
+{% endblock %}
